@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Socket IO</title>
+  <script src="jquery.js"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script>
+
+    //goi dien len server
+
+    const socket = io('http://localhost:3000');
+
+    //lang nghe: on
+    //phat tin hieu: emit
+
+    //lang nghe su kien tu server tra ve
+    socket.on('server-send-data', function(data){
+      $("#noidung").append(data + ', ');
+    });
+
+    $(document).ready(function(){
+      //khi client click vao div co id la mrA thi se gui du lieu len server
+      $("#mrA").click(function(){
+        socket.emit('client-send-data', 'Hello server!!');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="mrA">Click send!!</div>
+  <h2 id="noidung"></h2>
+</body>
+</html>
