@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo room</title>
+  <script src="jquery.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="xuly.js"></script>
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+  <input type="text" id="txtRoom"/>
+  <input type="button" id="btnRoom" value="Tao room"/>
+  <div id="left">
+    <h3>Room dang co</h3>
+    <div id="dsRoom"></div>
+  </div>
+
+  <h4 id="roomHienTai"></h4>
+  <div id="right"></div>
+  <input type="text" id="txtMessage"/>
+  <input type="button" id="btnSend" value="Gui"/>
+  <div id="dsMessage"></div>
+</body>
+</html>
